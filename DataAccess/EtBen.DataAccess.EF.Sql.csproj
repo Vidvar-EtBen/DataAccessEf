@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>EtBen.DataAccess.EF.Sql</PackageId>
+		<Version>1.0.2</Version>
+		<Authors>EtBen</Authors>
+		<Description>
+			A lightweight, extensible .NET 9 library implementing the Repository and Unit of Work patterns using Entity Framework Core.
+			This package provides generic repository interfaces and base classes, a repository factory for dependency injection, and a unit of work for transactional consistency.
+			Designed for clean separation of data access logic, it supports CRUD operations for any entity type and promotes maintainable, testable code architecture.
+		</Description>
+		<Copyright>Copyright © 2025 Esben Laudal Jensen (aka. Vidvar, EtBen). All rights reserved.</Copyright>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/Vidvar-EtBen/DataAccessEf</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
+	</ItemGroup>
+
+</Project>
