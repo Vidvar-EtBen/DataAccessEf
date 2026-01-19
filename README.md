@@ -1,6 +1,6 @@
 # 🧱 EtBen.DataAccess.EF.Sql
 
-A lightweight, extensible **.NET 9** library implementing the **Repository** and **Unit of Work** patterns using **Entity Framework Core**.
+A lightweight, extensible **.NET 10** library implementing the **Repository** and **Unit of Work** patterns using **Entity Framework Core**.
 
 [![NuGet](https://img.shields.io/nuget/v/EtBen.DataAccess.EF.Sql.svg)](https://www.nuget.org/packages/EtBen.DataAccess.EF.Sql)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -40,4 +40,4 @@ It illustrates how entities, keys, and relationships are structured, helping dev
 Install via **NuGet**:
 
 ```bash
-dotnet add package EtBen.DataAccess.EF.Sql
+dotnet add package EtBen.DataAccess.EF.Sql --version 2.0.0
