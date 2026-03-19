@@ -51,7 +51,7 @@ namespace DataAccess
             {
                 throw new InvalidOperationException(
                     $"No specific repository registered for entity type {typeof(TEntity).Name}. " +
-                    "Ensure IRepository<TEntity> is registered in Program.cs."
+                    "Ensure IGenericRepository<TEntity> is registered in Program.cs."
                 );
             }
 

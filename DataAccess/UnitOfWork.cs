@@ -36,6 +36,13 @@ namespace DataAccess
         public void Save() => dbContext.SaveChanges();
 
         /// <summary>
+        /// Asynchronously commits all changes made in the context to the database.
+        /// </summary>
+        /// <param name="cancellationToken">A <see cref="System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+        /// <returns>A task that represents the asynchronous save operation.</returns>
+        public Task SaveAsync(CancellationToken cancellationToken = default) => dbContext.SaveChangesAsync(cancellationToken);
+
+        /// <summary>
         /// Gets a repository for the specified entity type.
         /// </summary>
         /// <typeparam name="TEntity">The entity type.</typeparam>

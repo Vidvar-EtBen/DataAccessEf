@@ -36,6 +36,12 @@ namespace DataAccess
         TEntity GetById(int id);
 
         /// <summary>
+        /// Adds a new entity to the data store.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        void Add(TEntity entity);
+
+        /// <summary>
         /// Updates the specified entity in the data store.
         /// </summary>
         /// <param name="entity">The entity to update.</param>
@@ -52,5 +58,25 @@ namespace DataAccess
         /// </summary>
         /// <param name="id">The identifier of the entity to delete.</param>
         void DeleteById(int id);
+
+        /// <summary>
+        /// Retrieves all entities from the data store asynchronously.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation. The task result contains an enumerable of all entities.</returns>
+        Task<IEnumerable<TEntity>> GetAllAsync();
+
+        /// <summary>
+        /// Retrieves an entity by its identifier asynchronously.
+        /// </summary>
+        /// <param name="id">The entity identifier.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the entity if found; otherwise, null.</returns>
+        Task<TEntity> GetByIdAsync(int id);
+
+        /// <summary>
+        /// Adds a new entity to the data store asynchronously.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        Task AddAsync(TEntity entity);
     }
 }

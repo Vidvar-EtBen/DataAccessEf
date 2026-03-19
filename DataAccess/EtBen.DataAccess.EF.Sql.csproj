@@ -7,13 +7,18 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageId>EtBen.DataAccess.EF.Sql</PackageId>
-		<Version>2.0.0</Version>
+		<Version>2.1.0</Version>
 		<Authors>EtBen</Authors>
 		<Description>
-			A lightweight, extensible .NET 9 library implementing the Repository and Unit of Work patterns using Entity Framework Core.
-			This package provides generic repository interfaces and base classes, a repository factory for dependency injection, and a unit of work for transactional consistency.
-			Designed for clean separation of data access logic, it supports CRUD operations for any entity type and promotes maintainable, testable code architecture.
+			A lightweight, extensible .NET 10 library implementing the Repository and Unit of Work patterns with Entity Framework Core SQL Server.
+			It provides generic repository interfaces, a repository factory for dependency injection, and a unit of work for transactional consistency.
+			Designed for a clean architecture, it ensures testability and efficient asynchronous CRUD operations across any entity type.
 		</Description>
+		<PackageReleaseNotes>
+			Release 2.1.0:
+			- Updated Microsoft.EntityFrameworkCore and Microsoft.EntityFrameworkCore.SqlServer to version 10.0.5.
+			- Updated repository and unit of work implementations to use async functions.
+		</PackageReleaseNotes>
 		<Copyright>Copyright © 2025 Esben Laudal Jensen (aka. Vidvar, EtBen). All rights reserved.</Copyright>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/Vidvar-EtBen/DataAccessEf</RepositoryUrl>
@@ -28,8 +33,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.5" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.5" />
 	</ItemGroup>
-
 </Project>

@@ -40,4 +40,4 @@ It illustrates how entities, keys, and relationships are structured, helping dev
 Install via **NuGet**:
 
 ```bash
-dotnet add package EtBen.DataAccess.EF.Sql --version 2.0.0
+dotnet add package EtBen.DataAccess.EF.Sql --version 2.1.0

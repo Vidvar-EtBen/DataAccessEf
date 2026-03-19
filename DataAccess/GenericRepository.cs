@@ -41,6 +41,12 @@ namespace DataAccess
         public virtual TEntity GetById(int id) => set.Find(id)!;
 
         /// <summary>
+        /// Adds a new entity to the data store.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        public virtual void Add(TEntity entity) => set.Add(entity);
+
+        /// <summary>
         /// Updates the specified entity in the data store.
         /// </summary>
         /// <param name="entity">The entity to update.</param>
@@ -50,7 +56,7 @@ namespace DataAccess
         /// Deletes the specified entity from the data store.
         /// </summary>
         /// <param name="entity">The entity to delete.</param>
-        public void Delete(TEntity entity) => set.Remove(entity);
+        public virtual void Delete(TEntity entity) => set.Remove(entity);
 
         /// <summary>
         /// Deletes an entity by its identifier.
@@ -59,7 +65,7 @@ namespace DataAccess
         /// <remarks>
         /// If the entity is not found, no action is taken.
         /// </remarks>
-        public void DeleteById(int id)
+        public virtual void DeleteById(int id)
         {
             TEntity entity = GetById(id);
             if (entity is not null)
@@ -67,5 +73,25 @@ namespace DataAccess
                 Delete(entity);
             }
         }
+
+        /// <summary>
+        /// Retrieves all entities from the data store asynchronously.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation. The task result contains an enumerable of all entities.</returns>
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync() => await set.ToListAsync();
+
+        /// <summary>
+        /// Retrieves an entity by its identifier asynchronously.
+        /// </summary>
+        /// <param name="id">The entity identifier.</param>
+        /// <returns>A task that represents the asynchronous operation. The task result contains the entity if found; otherwise, null.</returns>
+        public virtual async Task<TEntity> GetByIdAsync(int id) => (await set.FindAsync(id))!;
+
+        /// <summary>
+        /// Adds a new entity to the data store asynchronously.
+        /// </summary>
+        /// <param name="entity">The entity to add.</param>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public virtual async Task AddAsync(TEntity entity) => await set.AddAsync(entity);
     }
 }
